@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contestant Out Overlay</title>
+    <style>
+        /* Basic styling for the page layout */
+        body {
+            font-family: Arial, sans-serif;
+        
+            justify-content: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            text-align: center;
+            margin: 20px 0;
+        }
+        h3 {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 20px auto;
+            gap: 10px;
+            height: 100%;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            transition: filter 0.3s ease;
+        }
+        /* Red X overlay */
+        .cross-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: red;
+            font-size: 80px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* Ensures overlay doesn’t block the image click */
+        }
+        /* Show overlay and apply black and white filter when image is "out" */
+        .image-wrapper.out img {
+            filter: grayscale(100%);
+        }
+        .image-wrapper.out .cross-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Forræder - Kollektiv edition</h1>
+<div class="container">
+    <!-- 18 image placeholders with your images -->
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/halvor.jpeg" alt="Image 1">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Halvor</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/tiril.jpeg" alt="Image 2">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Tiril</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/edvard.jpeg" alt="Image 3">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Edvard</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/ingrid.jpeg" alt="Image 4">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Ingrid</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/adrian.jpeg" alt="Image 5">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Adrian</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/hallvard.jpeg" alt="Image 6">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Hallvard</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/harald.png" alt="Image 7">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Harald</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/karine.jpeg" alt="Image 8">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Karine</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/konrad.jpeg" alt="Image 9">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Konrad</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/marius.jpeg" alt="Image 10">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Marius</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/mats.jpeg" alt="Image 11">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Mats</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/petter.png" alt="Image 12">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Petter</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/vera.jpg" alt="Image 13">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Vera</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/preben.jpg" alt="Image 14">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Preben</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/erik.png" alt="Image 15">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Erik</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/angelo.JPEG" alt="Image 16">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Angelo</h3>
+    </div>
+    <div>
+        <div class="image-wrapper" onclick="toggleOut(this)">
+            <img src="images/julie.jpeg" alt="Image 17">
+            <div class="cross-overlay">X</div>
+        </div>
+        <h3 class="image-label">Julie</h3>
+    </div>
+    
+    
+</div>
+
+<script>
+    // Function to toggle the "out" state with red cross overlay and black and white filter
+    function toggleOut(wrapper) {
+        wrapper.classList.toggle("out");
+    }
+</script>
+
+</body>
+</html>
